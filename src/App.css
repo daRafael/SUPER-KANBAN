@@ -1,0 +1,29 @@
+.app {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 50px 1fr 20px;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+}
+
+.board-container {
+  background-color: rgb(240, 240, 240);
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  height: 100px;
+}
+
+.columns-container {
+  display: flex;
+  justify-content: space-around;
+
+  width: 100%;
+}

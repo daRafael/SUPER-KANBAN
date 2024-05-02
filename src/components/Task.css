@@ -1,0 +1,11 @@
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+
+  background-color: white;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  padding: 20px;
+}
