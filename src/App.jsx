@@ -21,6 +21,23 @@ import Footer from './components/Footer';
 export default function App() {
   const [tasks, setTasks] = useState(tasksData);
 
+  const columns = {
+    column1 : {
+      id: 'column1',
+      title: 'To do',
+      tasksId: () => {
+        const tasksIds = [];
+
+        tasks.forEach((task) => {
+          tasksIds.push(task.id);
+        });
+        return tasksIds;
+      }
+    }
+  }
+
+  const columnOrder = [columns.column1]
+
   //finds and returns the index of a given id
   const getTaskPosition = id => tasks.findIndex(task => task.id === id);
 
@@ -48,12 +65,11 @@ export default function App() {
           <div className='input-container'>
             super kanban input
           </div>
-          <DndContext onDragEnd={handleDragEnd} collisionDetection={closestCorners}>
-            <div className='columns-container'>
-              <Column tasks={tasks}/>
-            </div>
-          </DndContext>
-
+          <div className='columns-container'>
+            <DndContext onDragEnd={handleDragEnd} collisionDetection={closestCorners}>
+                <Column title='To do' tasks={tasks}/>
+            </DndContext>
+          </div>
         </div>
       </div>
       <Footer />

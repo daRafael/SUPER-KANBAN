@@ -19,7 +19,17 @@ export default function Task({ id, task }) {
       style={style}
       className="task"
     >
-      {task.title}
+      <div className='prio-del-container'>
+        {`${task.priority} Priority`}
+        <button className='delete-task-btn'>X</button>
+      </div>
+      <div className='task-inpect-container'>
+       {task.title}
+       <button className='inspect-task-btn'>inspect</button>
+      </div>
+      <div className='assignee-container'>
+        {`Assigned to: ${task.assignee}`}
+      </div>
     </div>
   )
 }

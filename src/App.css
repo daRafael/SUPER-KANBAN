@@ -11,6 +11,7 @@
 
 .board-container {
   background-color: rgb(240, 240, 240);
+  padding-bottom: 50px;
 }
 
 .input-container {
