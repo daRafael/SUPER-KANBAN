@@ -1,20 +1,22 @@
 //dnd-kit
-import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable'
+import { SortableContext, rectSortingStrategy } from '@dnd-kit/sortable'
+import { useDroppable } from '@dnd-kit/core'
 
 import Task from './Task'
 import './Column.css'
 
-export default function Column({ title, tasks }) {
+export default function Column({ id, title, tasks }) {
+  const { setNodeRef } = useDroppable({ id: id })
   return (
-    <div className="column">
-      <div className='title'>
-        {title}
+    <SortableContext id={id} items={tasks} strategy={rectSortingStrategy}>
+      <div ref={setNodeRef} className="column">
+        <div className='title'>
+          {title}
+        </div>
+          {tasks.map((task) => {
+            return <Task key={task.id} task={task} id={task.id}/>
+          })}
       </div>
-      <SortableContext items={tasks} strategy={verticalListSortingStrategy}>
-        {tasks.map((task) => {
-          return <Task key={task.id} task={task} id={task.id}/>
-        })}
-      </SortableContext>
-    </div>
+    </SortableContext>
   )
 }

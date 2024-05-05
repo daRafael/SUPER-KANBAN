@@ -20,41 +20,111 @@ import Footer from './components/Footer';
 
 export default function App() {
   const [tasks, setTasks] = useState(tasksData);
+  const [columns, setColumns] = useState([
+    { id:'column1', title: 'To do', tasks: [...tasks.filter(task => task.status === 'To Do')] },
+    { id:'column2', title: 'In Progress', tasks: [...tasks.filter(task => task.status === 'In Progress')] },
+    { id:'column3', title: 'Done', tasks: [...tasks.filter(task => task.status === 'Done')] },
+  ]);
 
-  const columns = {
-    column1 : {
-      id: 'column1',
-      title: 'To do',
-      tasksId: () => {
-        const tasksIds = [];
-
-        tasks.forEach((task) => {
-          tasksIds.push(task.id);
-        });
-        return tasksIds;
+  //finding the column with given taskID
+  const findColumn = (taskId) => {
+    for (const column of columns) {
+      if (column.tasks.some(task => task.id === taskId)) {
+        return column;
       }
+    }
+    return null;
+  }
+
+  const handleDragOver = (event) => {
+    //extracting Ids and Columns 
+    const { active, over, delta} = event;
+    const activeId = active.id;
+    const overId = over ? over.id : null;
+    const activeColumn = findColumn(activeId);
+    const overColumn = findColumn(overId);
+
+    //column validation
+    if(!activeColumn || !overColumn || activeColumn === overColumn) {
+      return null;
+    }
+
+    //updating columns
+    setColumns((columns) => {
+      //extracting active and over task index from tasks arrays
+      const activeTasks = activeColumn.tasks;
+      const overTasks = overColumn.tasks;
+      const activeIndex = activeTasks.findIndex((task) => task.id === activeId);
+      const overIndex = overTasks.findIndex((task) => task.id === overId);
+      
+      //this function calculates the index where the active task should be inserted into the over column based on
+      //its position relative to other tasks and the drag direction (delta.y).
+      const newIndex = () => {
+        //determine condition if it should be placed below last task //delta.y refers to the vertical change in position. 
+        //If it moves up d.y will be nagative, if downwards positive, if no vertical mov = 0
+        const putBelowLastTask = overIndex === overTasks.length - 1 && delta.y > 0; 
+        const modifier = putBelowLastTask ? 1 : 0; // calculates modifier if prev condition true, mod is 1 if false mod is 0
+        return overIndex >= 0 ? overIndex + modifier : overTasks.length + 1; // calculate new index where the active task should be inserted
+      };
+
+      return columns.map((column) => {
+        //this code is removing the active task from original column
+        //it calculates the index where the active task should be inserted using the newIndex()
+        //it constructs the new task array for the over column, inserting the active task at the calcualted index
+        //it returns a new array of columns where the updated columns are replaced with their modified versions, the rest reamins unchanged.
+        if(column.id === activeColumn.id) {
+          column.tasks = activeTasks.filter((task) => task.id !== activeId);
+          return column;
+        } else if (column.id === overColumn.id) {
+          column.tasks = [
+            ...overTasks.slice(0, newIndex()),
+            activeTasks[activeIndex],
+            ...overTasks.slice(newIndex(), overTasks.length)
+          ];
+          return column;
+        } else {
+          return column;
+        }
+      });
+    });
+  };
+
+  const handleDragEnd = event => {
+    //extracting Ids and columns
+    const {active, over} = event
+    const activeId = active.id;
+    const overId = over ? over.id : null;
+    const activeColumn = findColumn(activeId);
+    const overColumn = findColumn(overId);
+
+    //column validation
+    if(!activeColumn || !overColumn || activeColumn !== overColumn) {
+      return null;
+    }
+    
+    //extracting index of active and over task from each task arrays
+    const activeIndex = activeColumn.tasks.findIndex((task) => task.id === activeId);
+    const overIndex = overColumn.tasks.findIndex((task) => task.id === overId);
+
+    //if the task and over task are not the same index, it updates the columns state
+    if(activeIndex !== overIndex) {
+      setColumns((columns) => {
+        return columns.map((column) => {
+          if(column.id === activeColumn.id) {
+            //dnd-kit method. It moves the active task within the over column's tasks array from its original pos to pos where it was dropped.
+            //for other columns, it leaves it unchanged
+            column.tasks = arrayMove(overColumn.tasks, activeIndex, overIndex);
+            return column;
+          } else {
+            return column;
+          }
+        });
+      });
     }
   }
 
-  const columnOrder = [columns.column1]
-
-  //finds and returns the index of a given id
-  const getTaskPosition = id => tasks.findIndex(task => task.id === id);
-
-  const handleDragEnd = event => {
-    //active is the current element being dragged
-    //over is the element that is going to be replaced
-    const {active, over} = event
-
-    if(active.id === over.id) return;
-
-    setTasks(tasks => {
-      const originalPosition = getTaskPosition(active.id);
-      const newPosition = getTaskPosition(over.id);
-
-      return arrayMove(tasks, originalPosition, newPosition);
-    })
-  }
+  //idk Y, but if a column becomes empty we cannot move any other task inside it.
+  //trying to debug it for the last 2 days, elp
 
   return (
     <div className='app'>
@@ -66,8 +136,21 @@ export default function App() {
             super kanban input
           </div>
           <div className='columns-container'>
-            <DndContext onDragEnd={handleDragEnd} collisionDetection={closestCorners}>
-                <Column title='To do' tasks={tasks}/>
+            <DndContext
+              onDragOver={handleDragOver} 
+              onDragEnd={handleDragEnd} 
+              collisionDetection={closestCorners}
+            >
+              {columns.map((column) => {
+                return (
+                  <Column 
+                    key={column.id} 
+                    id={column.id} 
+                    title={column.title} 
+                    tasks={column.tasks} 
+                  />
+                ) 
+              })}
             </DndContext>
           </div>
         </div>
