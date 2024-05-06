@@ -27,6 +27,11 @@ export default function App() {
     { id:'column3', title: 'Done', tasks: tasks.filter(task => task.status === 'Done') },
   ]);
 
+
+  const addNewTask = (task) => {
+    setTasks([...tasks, task]);  
+  }
+    
   const deleteTask = (taskId) => {
     const updatedTasks = tasks.filter((task) => {
       console.log('tasks are being filtered')
@@ -34,7 +39,6 @@ export default function App() {
     });
 
     setTasks(updatedTasks);
-
   }
 
   //finding the column with given taskID
