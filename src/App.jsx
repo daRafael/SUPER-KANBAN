@@ -16,18 +16,29 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Column from './components/Column';
 import Footer from './components/Footer';
+import Task from './components/Task';
 
 
 export default function App() {
   const [tasks, setTasks] = useState(tasksData);
   const [columns, setColumns] = useState([
-    { id:'column1', title: 'To do', tasks: [...tasks.filter(task => task.status === 'To Do')] },
-    { id:'column2', title: 'In Progress', tasks: [...tasks.filter(task => task.status === 'In Progress')] },
-    { id:'column3', title: 'Done', tasks: [...tasks.filter(task => task.status === 'Done')] },
+    { id:'column1', title: 'To do', tasks: tasks.filter(task => task.status === 'To Do') },
+    { id:'column2', title: 'In Progress', tasks: tasks.filter(task => task.status === 'In Progress') },
+    { id:'column3', title: 'Done', tasks: tasks.filter(task => task.status === 'Done') },
   ]);
 
+
   const addNewTask = (task) => {
-    setTasks([...tasks, task]);
+    setTasks([...tasks, task]);  
+  }
+    
+  const deleteTask = (taskId) => {
+    const updatedTasks = tasks.filter((task) => {
+      console.log('tasks are being filtered')
+      return task.id !== taskId;
+    });
+
+    setTasks(updatedTasks);
   }
 
   //finding the column with given taskID
@@ -151,7 +162,8 @@ export default function App() {
                     key={column.id} 
                     id={column.id} 
                     title={column.title} 
-                    tasks={column.tasks} 
+                    tasks={column.tasks}
+                    deleteTask={deleteTask}                               
                   />
                 ) 
               })}

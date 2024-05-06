@@ -5,8 +5,9 @@ import { useDroppable } from '@dnd-kit/core'
 import Task from './Task'
 import './Column.css'
 
-export default function Column({ id, title, tasks }) {
+export default function Column({ id, title, tasks, deleteTask }) {
   const { setNodeRef } = useDroppable({ id: id })
+
   return (
     <SortableContext id={id} items={tasks} strategy={rectSortingStrategy}>
       <div ref={setNodeRef} className="column">
@@ -14,8 +15,8 @@ export default function Column({ id, title, tasks }) {
           {title}
         </div>
           {tasks.map((task) => {
-            return <Task key={task.id} task={task} id={task.id}/>
-          })}
+            return <Task key={task.id} task={task} id={task.id} deleteTask={deleteTask}  />
+          })}          
       </div>
     </SortableContext>
   )
