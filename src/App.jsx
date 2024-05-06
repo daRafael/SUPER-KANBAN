@@ -26,6 +26,10 @@ export default function App() {
     { id:'column3', title: 'Done', tasks: [...tasks.filter(task => task.status === 'Done')] },
   ]);
 
+  const addNewTask = (task) => {
+    setTasks([...tasks, task]);
+  }
+
   //finding the column with given taskID
   const findColumn = (taskId) => {
     for (const column of columns) {
