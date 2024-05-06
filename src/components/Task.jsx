@@ -3,12 +3,12 @@ import './Task.css'
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 
-export default function Task({ id, task }) {
+export default function Task({ id, task, deleteTask }) {
   const { attributes, listeners, setNodeRef, transform } = useSortable({id: id});
 
   const style = {
     transform: CSS.Transform.toString(transform)
-  }
+  }  
 
   return (
     <div 
@@ -20,7 +20,7 @@ export default function Task({ id, task }) {
     >
       <div className='prio-del-container'>
         {`${task.priority} Priority`}
-        <button className='delete-task-btn'>X</button>
+        <button onClick={() => { deleteTask(id)}} className='delete-task-btn'>X</button>
       </div>
       <div className='task-inpect-container'>
        {task.title}
