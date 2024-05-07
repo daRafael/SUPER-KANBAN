@@ -1,5 +1,5 @@
 //React
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 //dnd-kit
 import { DndContext, closestCorners } from '@dnd-kit/core';
@@ -21,11 +21,15 @@ import Task from './components/Task';
 
 export default function App() {
   const [tasks, setTasks] = useState(tasksData);
-  const [columns, setColumns] = useState([
-    { id:'column1', title: 'To do', tasks: tasks.filter(task => task.status === 'To Do') },
-    { id:'column2', title: 'In Progress', tasks: tasks.filter(task => task.status === 'In Progress') },
-    { id:'column3', title: 'Done', tasks: tasks.filter(task => task.status === 'Done') },
-  ]);
+  const [columns, setColumns] = useState([]);
+
+  useEffect(() => {
+    setColumns([
+      { id:'column1', title: 'To do', tasks: tasks.filter(task => task.status === 'To Do') },
+      { id:'column2', title: 'In Progress', tasks: tasks.filter(task => task.status === 'In Progress') },
+      { id:'column3', title: 'Done', tasks: tasks.filter(task => task.status === 'Done') },
+    ])
+  }, [tasks])
 
 
   const addNewTask = (task) => {
