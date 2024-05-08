@@ -1,5 +1,5 @@
 //dnd-kit
-import { SortableContext, rectSortingStrategy } from '@dnd-kit/sortable'
+import { SortableContext } from '@dnd-kit/sortable'
 import { useDroppable } from '@dnd-kit/core'
 
 import Task from './Task'
@@ -9,7 +9,7 @@ export default function Column({ id, title, tasks, deleteTask }) {
   const { setNodeRef } = useDroppable({ id: id })
 
   return (
-    <SortableContext id={id} items={tasks} strategy={rectSortingStrategy}>
+    <SortableContext id={id} items={tasks}>
       <div ref={setNodeRef} className="column">
         <div className='title'>
           {title}
