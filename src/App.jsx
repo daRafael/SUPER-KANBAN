@@ -46,6 +46,27 @@ export default function App() {
   }
 
   //finding the column with given taskID
+  const findColumn = (id) => {
+    if(!id) {
+      return null;
+    }
+
+    // Check if the ID corresponds to a column ID
+    if (columns.some((column) => column.id === id)) {
+      // Return the column with the matching ID
+      return columns.find((column) => column.id === id) || null;
+    }
+
+    // If the ID corresponds to a task ID, find the associated column
+    for (const column of columns) {
+      if (column.tasks.some(task => task.id === id)) {
+        return column;
+      }
+    }
+    return null;
+  }
+
+ /*  //finding the column with given taskID
   const findColumn = (taskId) => {
     for (const column of columns) {
       if (column.tasks.some(task => task.id === taskId)) {
@@ -53,7 +74,7 @@ export default function App() {
       }
     }
     return null;
-  }
+  } */
 
   const handleDragOver = (event) => {
     //extracting Ids and Columns 
