@@ -1,14 +1,8 @@
 .app {
   height: 100%;
-  display: grid;
-  grid-template-rows: 50px 1fr 20px;
+  margin-top: 50px;
+  margin-left: 50px;
 }
-
-.main-container {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-}
-
 .board-container {
   background-color: rgb(240, 240, 240);
   padding-bottom: 50px;

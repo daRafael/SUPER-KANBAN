@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Task.css'
 
 import { useSortable } from '@dnd-kit/sortable';
@@ -30,7 +31,9 @@ export default function Task({ id, task, deleteTask }) {
         </div>
         <div className='task-inpect-container'>
         {task.title}
-        <button className='inspect-task-btn'>inspect</button>
+        <Link to={`/tasks/${task.id}`}>
+          <button className='inspect-task-btn'>inspect</button>
+        </Link>
         </div>
         <div className='assignee-container'>
           {`Assigned to: ${task.assignee}`}
