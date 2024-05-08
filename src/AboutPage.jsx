@@ -7,30 +7,34 @@ export default function AboutPage() {
       <div className="about-container">
         <div className="profiles-container">
 
-          <div className="first-profile-container">
+          <div className="profile-container">
             <div className="profile-img-container">
-              <img src="https://placehold.co/400" alt="" />
+              <img className='profile-img' src="https://placehold.co/400" alt="" />
             </div>
             <div className="autor-container">
               <div className="author-name">
                 <h2>Rafael Guerra</h2>
               </div>
               <div className="author-description">
-                <p></p>
+                <p>It is a long established fact that a reader will be 
+                  distracted by the readable content of a page when looking 
+                  at its layout.</p>
               </div>
             </div>
           </div>
 
-          <div className="second-profile-container">
+          <div className="profile-container">
             <div className="profile-img-container">
-              <img src="https://placehold.co/400" alt="" />
+              <img className='profile-img' src="https://placehold.co/400" alt="" />
             </div>
             <div className="autor-container">
               <div className="author-name">
                 <h2>Edir Sequeira</h2>
               </div>
               <div className="author-description">
-                <p>Thank you!</p>
+                <p>It is a long established fact that a reader will be 
+                  distracted by the readable content of a page when looking 
+                  at its layout</p>
               </div>
             </div>
           </div>
@@ -38,10 +42,22 @@ export default function AboutPage() {
 
         <div className="final-description-container">
           <div className="final-description">
-            <p></p>
+            <p>It is a long established fact that a
+              reader will be distracted by the readable
+              content of a page when looking at its layout.
+              The point of using Lorem Ipsum is that it has a
+              more-or-less normal distribution of letters, as
+              opposed to using 'Content here, content here',
+              making it look like readable English.
+              Many desktop publishing packages and web page
+              editors now use Lorem Ipsum as their default model text,
+              and a search for 'lorem ipsum' will uncover many web sites
+              still in their infancy. Various versions have evolved over the years,
+              sometimes by accident, sometimes on purpose
+              (injected humour and the like).</p>
           </div>
           <div className="thank-you">
-            <p></p>
+            <p>Thank you!</p>
           </div>
         </div>
       </div>
