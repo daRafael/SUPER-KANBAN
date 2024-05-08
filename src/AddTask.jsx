@@ -1,4 +1,5 @@
 import { useState } from "react"
+import './AddTask.css'
 
 export default function AddTask({ addNewTask, tasks }) {
   const [title, setTitle] = useState('');
