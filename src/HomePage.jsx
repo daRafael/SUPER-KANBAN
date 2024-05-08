@@ -155,7 +155,12 @@ export default function HomePage({tasks, columns, setTasks, setColumns}) {
         </button>
       </div>
       {showAddTaskForm && (
-        <AddTask addNewTask={addNewTask} tasks={tasks}/>
+        <AddTask 
+          addNewTask={addNewTask} 
+          tasks={tasks} 
+          showAddTaskForm={showAddTaskForm} 
+          setShowAddTaskForm={setShowAddTaskForm} 
+        />
       )}
       <div className='columns-container'>
         <DndContext

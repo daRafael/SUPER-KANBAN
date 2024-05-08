@@ -1,7 +1,8 @@
 import { useState } from "react"
+import { Link } from "react-router-dom";
 import './AddTask.css'
 
-export default function AddTask({ addNewTask, tasks }) {
+export default function AddTask({ addNewTask, tasks, showAddTaskForm, setShowAddTaskForm }) {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [assignee, setAssignee] = useState('');
@@ -15,6 +16,7 @@ export default function AddTask({ addNewTask, tasks }) {
 
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
+    resizeTextarea(e.target);
   }
 
   const handleAssigneeChange = (e) => {
@@ -38,7 +40,8 @@ export default function AddTask({ addNewTask, tasks }) {
 
     if(!title || !description || !assignee) {
       alert('Please fill all fields!')
-    }
+      return;
+    } 
 
     const id = tasks.length + 1;
     const createdDate = Date.now();
@@ -54,6 +57,11 @@ export default function AddTask({ addNewTask, tasks }) {
     setDueDate('');
     }
 
+    const resizeTextarea = (element) => {
+      element.style.height = 'auto'; // Reset height to auto to properly calculate new height
+      element.style.height = element.scrollHeight + 'px'; // Set height to scrollHeight to fit content
+    };
+
   
   return (
     <div className="background-overlay">
@@ -63,10 +71,11 @@ export default function AddTask({ addNewTask, tasks }) {
           New Task
         </div>
         <div className="back-btn-container">
-          <button>X</button>
+          <button onClick={()=>{setShowAddTaskForm(!showAddTaskForm)}}>X</button>
         </div>
         <form className="form">
-          <input 
+          <input
+            className="title-input"
             type="text" 
             name="title" 
             value={title}
@@ -74,22 +83,27 @@ export default function AddTask({ addNewTask, tasks }) {
             placeholder="Task title"
           />
 
-          <input 
-            name="description" 
-            value={description} 
+          <textarea 
+            className="description-input"
+            name="description"
+            cols='40'
+            rows='2'
+            value={description}
             onChange={handleDescriptionChange} 
             placeholder="Task description"
           />
 
-          <div>
-            <input 
+          <div className="assignee-prio-container-iputs">
+            <input
+              className="assignee-input" 
               name="assingnee" 
               value={assignee} 
               onChange={handleAssigneeChange} 
               placeholder="Assign it to someone!"
             />
 
-            <select 
+            <select
+              className="prio-input" 
               name="priority" 
               value={priority} 
               onChange={handlePriorityChange}
@@ -101,8 +115,9 @@ export default function AddTask({ addNewTask, tasks }) {
             </select>
 
           </div>
-          <div>
-            <select 
+          <div className="status-date-container-inputs">
+            <select
+              className="status-input" 
               name="status" 
               value={status} 
               onChange={handleStatusChange}
@@ -113,14 +128,24 @@ export default function AddTask({ addNewTask, tasks }) {
             </select>
 
             <input
+              className="date-input"
               type="date"
               name="dueDate"
               value={dueDate}
               onChange={handleDueDateChange}
             />
           </div>
+          <div className="submit-task-btn-container">
+            <button 
+              className="submit-task-btn" 
+              onClick={handleSubmit} 
+              type="sumbit"
+            >
+              Add
+            </button>
+          </div>
 
-          <button onClick={handleSubmit} type="sumbit">Add</button>
+          
         </form>
       </div>
 

@@ -44,5 +44,68 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 30px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.title-input {
+  font-size: 30px;
+  border: none;
+}
+
+.description-input {
+  font-size: 18px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  border: none;
+  resize: none;
+  max-height: 100px;
+}
+
+.assignee-prio-container-iputs,
+.status-date-container-inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.assignee-input,
+.prio-input,
+.status-input,
+.date-input {
+  border: none;
+  font-size: 18px;
+}
+
+.submit-task-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-task-btn {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 8px 25px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+
+}
+
+.submit-task-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.submit-task-btn:active {
+  margin-top: 2px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
 }
