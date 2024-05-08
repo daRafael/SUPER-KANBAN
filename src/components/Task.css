@@ -1,17 +1,39 @@
-.task {
+.task-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
-
+  align-items: center;
   background-color: white;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
-  padding: 20px;
+  padding: 0px 20px 20px 20px;
+}
+
+.task-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
 }
 
 .prio-del-container,
 .task-inpect-container {
   display: flex;
   justify-content: space-between;
+}
+
+.drag-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 35px;
+}
+
+.drag-container-vs {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 18%;
+  width: 70%;
+  border:none;
+  border-radius: 30px;
 }

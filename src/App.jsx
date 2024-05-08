@@ -14,9 +14,9 @@ import './App.css'
 //components
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
+import AddTask from './AddTask';
 import Column from './components/Column';
 import Footer from './components/Footer';
-import Task from './components/Task';
 
 
 export default function App() {
@@ -33,7 +33,8 @@ export default function App() {
 
 
   const addNewTask = (task) => {
-    setTasks([...tasks, task]);  
+    setTasks([...tasks, task]); 
+    console.log(task) 
   }
     
   const deleteTask = (taskId) => {
@@ -163,8 +164,7 @@ export default function App() {
     }
   }
 
-  //idk Y, but if a column becomes empty we cannot move any other task inside it.
-  //trying to debug it for the last 2 days, elp
+ 
 
   return (
     <div className='app'>
@@ -172,8 +172,9 @@ export default function App() {
       <div className='main-container'>
         <Sidebar/>
         <div className='board-container'>
+          <AddTask tasks={tasks} addNewTask={addNewTask} />
           <div className='input-container'>
-            super kanban input
+            <button className='add-task-btn'>Add Task</button>
           </div>
           <div className='columns-container'>
             <DndContext

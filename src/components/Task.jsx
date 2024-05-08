@@ -13,22 +13,30 @@ export default function Task({ id, task, deleteTask }) {
   return (
     <div 
       ref={setNodeRef} 
-      {...attributes}
-      {...listeners}
       style={style}
-      className="task"
+      className="task-container"
     >
-      <div className='prio-del-container'>
-        {`${task.priority} Priority`}
-        <button onClick={() => { deleteTask(id)}} className='delete-task-btn'>X</button>
+      <div
+        {...attributes}
+        {...listeners}
+        className='drag-container'
+      >
+        <div className='drag-container-vs'></div>
       </div>
-      <div className='task-inpect-container'>
-       {task.title}
-       <button className='inspect-task-btn'>inspect</button>
+      <div className='task-info'>
+        <div className='prio-del-container'>
+          {`${task.priority} Priority`}
+          <button onClick={() => { deleteTask(id)}} className='delete-task-btn'>X</button>
+        </div>
+        <div className='task-inpect-container'>
+        {task.title}
+        <button className='inspect-task-btn'>inspect</button>
+        </div>
+        <div className='assignee-container'>
+          {`Assigned to: ${task.assignee}`}
+        </div>
       </div>
-      <div className='assignee-container'>
-        {`Assigned to: ${task.assignee}`}
-      </div>
+      
     </div>
   )
 }
