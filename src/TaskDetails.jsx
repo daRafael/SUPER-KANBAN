@@ -1,4 +1,5 @@
 import { useParams, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './TaskDetails.css'
 
 export default function TaskDetails ({ tasks }) {
@@ -21,7 +22,9 @@ export default function TaskDetails ({ tasks }) {
           </div>
           <div className="btns-container">
             <button>edit</button>
-            <button>back</button>
+            <Link to='/'>
+              <button>back</button>
+            </Link>
           </div>
         </div>
         <div className="title-container">

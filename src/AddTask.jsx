@@ -56,13 +56,16 @@ export default function AddTask({ addNewTask, tasks }) {
 
   
   return (
-    <div className="background-container">
+    <div className="background-overlay">
 
       <div className="add-task-container">
-        <div className="title">
-          Add New Task
+        <div className="title-container">
+          New Task
         </div>
-        <form>
+        <div className="back-btn-container">
+          <button>X</button>
+        </div>
+        <form className="form">
           <input 
             type="text" 
             name="title" 
