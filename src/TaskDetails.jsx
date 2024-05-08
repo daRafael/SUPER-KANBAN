@@ -17,7 +17,7 @@ export default function TaskDetails ({ tasks }) {
     <div className="background">
       <div className="task-details-container">
         <div className="stat-back-edit-container">
-          <div>
+          <div className="status-container">
             {task.status}
           </div>
           <div className="btns-container">
@@ -27,7 +27,7 @@ export default function TaskDetails ({ tasks }) {
             </Link>
           </div>
         </div>
-        <div className="title-container">
+        <div className="title-inspect-task-container">
           {task.title}
         </div>
         <div className="description-container">
@@ -35,19 +35,17 @@ export default function TaskDetails ({ tasks }) {
         </div>
         <div className="assignee-prio-container">
           <div className="assignee-container">
-            {task.assignee}
+            Assinged: <span>{task.assignee}</span>
           </div>
           <div className="prio-container">
-            {task.priority}
+            Task Priority: <span>{task.priority}</span>
           </div>
         </div>
-        <div className="dates-container">
-          <div className="created-date-container">
-            Created date
+        <div className="due-date-container">
+          <div>
+            Due Date
           </div>
-          <div className="dueDate-container">
-            {task.dueDate}
-          </div>
+          {task.dueDate}
         </div>
       </div>
     </div>

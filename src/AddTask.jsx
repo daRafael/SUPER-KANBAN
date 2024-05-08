@@ -67,7 +67,7 @@ export default function AddTask({ addNewTask, tasks, showAddTaskForm, setShowAdd
     <div className="background-overlay">
 
       <div className="add-task-container">
-        <div className="title-container">
+        <div className="title-add-task-container">
           New Task
         </div>
         <div className="back-btn-container">
