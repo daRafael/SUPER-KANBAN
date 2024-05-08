@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function AddTask( addNewTask, students) {
+export default function AddTask({ addNewTask, tasks }) {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [assignee, setAssignee] = useState('');
@@ -24,8 +24,12 @@ export default function AddTask( addNewTask, students) {
     setPriority(e.target.value);
   }
 
-  const handleSatusChange = () => {
+  const handleStatusChange = () => {
     setStatus(e.target.value);
+  }
+
+  const handleDueDateChange = (e) => {
+    setDueDate(e.target.value);
   }
 
   const handleSubmit = (e) => {
@@ -35,12 +39,19 @@ export default function AddTask( addNewTask, students) {
       alert('Please fill all fields!')
     }
 
-    const id = students.length + 1;
-    const d = new Date();
-    createdDate = d.valueOf();
+    const id = tasks.length + 1;
+    const createdDate = Date.now();
 
-    addNewTask({ id, title, description, assignee, status, priority, createdDate })
-  }
+    addNewTask({ id, title, description, assignee, status, priority, createdDate, dueDate });
+
+    // Reseting form fields after adding a new task
+    setTitle('');
+    setDescription('');
+    setAssignee('');
+    setPriority('Medium');
+    setStatus('To Do');
+    setDueDate('');
+    }
 
   
   return (
@@ -59,12 +70,26 @@ export default function AddTask( addNewTask, students) {
             placeholder="Task title"
           />
 
-          <input name="description" value={description} onChange={handleDescriptionChange} placeholder="Task description"/>
+          <input 
+            name="description" 
+            value={description} 
+            onChange={handleDescriptionChange} 
+            placeholder="Task description"
+          />
 
           <div>
-            <input name="assingnee" value={assignee} onChange={handleAssigneeChange} placeholder="Assign it to someone!"/>
+            <input 
+              name="assingnee" 
+              value={assignee} 
+              onChange={handleAssigneeChange} 
+              placeholder="Assign it to someone!"
+            />
 
-            <select name="priority" value={priority} onChange={handlePriorityChange}>
+            <select 
+              name="priority" 
+              value={priority} 
+              onChange={handlePriorityChange}
+            >
               <option value=''>Select Priority</option>
               <option value='Low'>Low</option>
               <option value='Medium'>Medium</option>
@@ -72,12 +97,24 @@ export default function AddTask( addNewTask, students) {
             </select>
 
           </div>
+          <div>
+            <select 
+              name="status" 
+              value={status} 
+              onChange={handleStatusChange}
+            >
+              <option value='To Do'>To Do</option>
+              <option value='In Progress'>In Progress</option>
+              <option value='Done'>Done</option>
+            </select>
 
-          <select name="status" value={status} onChange={handleSatusChange}>
-            <option value='To Do'>To Do</option>
-            <option value='In Progress'>In Progress</option>
-            <option value='Done'>Done</option>
-          </select>
+            <input
+              type="date"
+              name="dueDate"
+              value={dueDate}
+              onChange={handleDueDateChange}
+            />
+          </div>
 
           <button onClick={handleSubmit} type="sumbit">Add</button>
         </form>
