@@ -17,12 +17,14 @@ import Footer from './components/Footer';
 //pages
 import HomePage from './HomePage';
 import TaskDetails from "./TaskDetails";
+import AboutPage from "./AboutPage";
 
 
 
 export default function App() {
   const [tasks, setTasks] = useState(tasksData);
   const [columns, setColumns] = useState([]);
+  
 
   useEffect(() => {
     setColumns([
@@ -55,6 +57,12 @@ export default function App() {
               <TaskDetails 
                 tasks={tasks} 
               />} 
+            />
+            <Route 
+              path="/about"
+              element={
+                <AboutPage/>
+              }
             />
           </Routes>
         </div>

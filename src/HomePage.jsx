@@ -4,9 +4,15 @@ import { DndContext, closestCorners } from '@dnd-kit/core';
 import { arrayMove } from '@dnd-kit/sortable';
 
 import Column from './components/Column';
+import { useState } from 'react';
+import AddTask from './AddTask';
 
 export default function HomePage({tasks, columns, setTasks, setColumns}) {
+  const [showAddTaskForm, setShowAddTaskForm] = useState(false);
 
+  const toggleTaskForm = () => {
+    setShowAddTaskForm(!showAddTaskForm)
+  }
 
   const addNewTask = (task) => {
     setTasks([...tasks, task]); 
@@ -144,10 +150,13 @@ export default function HomePage({tasks, columns, setTasks, setColumns}) {
   return (
     <div className='board-container'>
       <div className='input-container'>
-        <button className='add-task-btn'>
+        <button onClick={toggleTaskForm} className='add-task-btn'>
           Add Task
         </button>
       </div>
+      {showAddTaskForm && (
+        <AddTask addNewTask={addNewTask} tasks={tasks}/>
+      )}
       <div className='columns-container'>
         <DndContext
           onDragOver={handleDragOver}
