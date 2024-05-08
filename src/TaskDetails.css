@@ -1,0 +1,40 @@
+.background{
+    height: 100%;
+    margin-top: 50px;
+    margin-left: 50px;
+    
+}
+
+.task-details-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    padding: 0px 20px 20px 20px;
+}
+
+.stat-back-edit-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0px 20px 20px 20px;
+}
+
+.btns-container{
+    display: flex;
+    gap: 10px;
+}
+
+.assignee-prio-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dates-container{
+    display: flex;
+    justify-content: space-between;
+}
+
