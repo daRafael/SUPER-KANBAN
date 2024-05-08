@@ -1,20 +1,26 @@
 .app {
   margin-top: 50px;
   margin-left: 100px;
+  height: 100%;
 }
+
+.main-container {
+  height: 100%;
+}
+
 .board-container {
   background-color: rgb(240, 240, 240);
   min-height: 700px;
-  height: 100%;
 
   padding-bottom: 50px;
+  height: 100%;
 }
 
 .input-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   height: 100px;
 }
 

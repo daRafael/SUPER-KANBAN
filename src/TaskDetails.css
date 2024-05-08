@@ -1,39 +1,50 @@
-.background{
-    height: 100%;
-    margin-top: 50px;
-    margin-left: 50px;    
+.task-details-container {  
+  background-color: white;
+  min-width: 500px;
+  max-width: 800px;
+  width: 50%;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 5px;
+
+  padding: 40px 50px;
 }
 
-.task-details-container{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
-    padding: 0px 20px 20px 20px;
+.stat-back-edit-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.stat-back-edit-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    padding: 0px 20px 20px 20px;
+.status-container,
+.description-container {
+  font-size: 30px;
 }
 
-.btns-container{
-    display: flex;
-    gap: 10px;
+.title-inspect-task-container {
+  font-size: 40px;
+  font-weight: bold;
+  padding: 20px 0;
 }
 
 .assignee-prio-container {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap;
+  font-size: 25px;
+
+  padding: 20px 0;
 }
 
-.dates-container{
-    display: flex;
-    justify-content: space-between;
+.assignee-container,
+.prio-container {
+  text-align: center;
 }
 
+.due-date-container {
+  display: flex;
+  gap: 10px;
+  padding-top: 20px;
+  margin-bottom: -25px;
+}
