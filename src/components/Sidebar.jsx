@@ -1,19 +1,20 @@
 import './Sidebar.css'
+import { Link } from 'react-router-dom';
 
 export default function Sidebar() {
   return (
     <div className="side-bar">
       <div className="link-container">
-        <a>
-          Sidebar
-          <img/>
-        </a>
+        <Link to='/'>
+          Home
+          <img />
+        </Link>
       </div>
       <div className="link-container">
-        <a>
-          Sidebar
+        <Link to='/about'>
+          About
           <img/>
-        </a>
+        </Link>
       </div>
     </div>
   );
