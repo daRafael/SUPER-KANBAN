@@ -14,7 +14,7 @@ export default function TaskDetails ({ tasks }) {
   
   return (
     <div className="background">
-      <div className="task-container">
+      <div className="task-details-container">
         <div className="stat-back-edit-container">
           <div>
             {task.status}
