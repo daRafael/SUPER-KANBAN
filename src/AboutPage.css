@@ -1,1 +1,33 @@
+.background{
+    height: 100%;
+    background-color: rgb(240, 240, 240);
+}
 
+.about-container{
+    display: grid;    
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+    background-color: white;
+    
+}
+
+.profile-container{
+    display: flex;
+    justify-content: space-evenly;    
+    
+}
+
+.profile-img-container{
+    padding: 5px;
+    width: 150px;
+}
+
+.profile-img{
+    width: 150px;
+    border-radius: 50%;
+}
+
+.autor-container{
+    width: 200px;
+    
+}
