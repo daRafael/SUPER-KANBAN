@@ -39,8 +39,23 @@ export default function App() {
         <Sidebar />
         <div className='main-container'>
           <Routes>
-            <Route path="/" element={<HomePage tasks={tasks} columns={columns} setTasks={setTasks} setColumns={setColumns}/>} />
-            <Route path="/tasks/:taskId" element={<TaskDetails tasks={tasks} />}></Route>
+            <Route 
+              path="/" 
+              element={
+              <HomePage 
+                tasks={tasks} 
+                columns={columns} 
+                setTasks={setTasks} 
+                setColumns={setColumns}
+              />} 
+            />
+            <Route 
+              path="/tasks/:taskId" 
+              element={
+              <TaskDetails 
+                tasks={tasks} 
+              />} 
+            />
           </Routes>
         </div>
         <Footer />
