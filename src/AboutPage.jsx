@@ -1,6 +1,4 @@
 import './AboutPage.css'
-import gitlogo from '../images/github-logo.jpg';
-import inlogo from '../images/linkedin-logo.png';
 
 export default function AboutPage() {
 
@@ -20,10 +18,10 @@ export default function AboutPage() {
               <div className="author-description">
                 <div className='logo-container'>
                   <a href="https://github.com/daRafael" target='/blank'>
-                    <img src={gitlogo} alt="" className='logo-img' />
+                    <img src="" alt="" className='logo-img' />
                   </a>
                   <a href="https://www.linkedin.com/in/rafael-guerra-full-stack-developer/" target='/blank'>
-                    <img src={inlogo} alt="" className='logo-img' />
+                    <img src="" alt="" className='logo-img' />
                   </a>
                 </div>
                 <div>
@@ -49,10 +47,10 @@ export default function AboutPage() {
               <div className="author-description">
                 <div className='logo-container'>
                   <a href="https://github.com/ejcsequeira" target='/blank'>
-                    <img src={gitlogo} alt="" className='logo-img' />
+                    <img src="" alt="" className='logo-img' />
                   </a>
                   <a href="https://www.linkedin.com/in/edir-sequeira" target='/blank'>
-                    <img src={inlogo} alt="" className='logo-img' />
+                    <img src="" alt="" className='logo-img' />
                   </a>
                 </div>
                 <div>
