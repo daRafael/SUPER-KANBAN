@@ -13,7 +13,7 @@ export default function AboutPage() {
 
             <div className="profile-container">
               <div className="profile-img-container">
-                <img className='profile-img' src="./src/assets/images/rafael-profile.png" alt="" />
+                <img className='profile-img' src="../src/assets/images/rafael-profile.png" alt="" />
               </div>
               <div className="author-container">
                 <div className="author-name">
@@ -22,10 +22,10 @@ export default function AboutPage() {
                 <div className="author-links">
                   <div className='links-container'>
                     <a href="https://github.com/daRafael" target='/blank'>
-                      <img className='link-logos' src='./src/assets/images/github-logo.png' alt='github-img'/>
+                      <img className='link-logos' src='../src/assets/images/github-logo.png' alt='github-img'/>
                     </a>
                     <a href="https://linkedin.com/in/rafael-guerra-full-stack-developer" target='/blank'>
-                      <img className='link-logos' src='./src/assets/images/linkedin-logo.png' alt='linkedin-logo'/>
+                      <img className='link-logos' src='../src/assets/images/linkedin-logo.png' alt='linkedin-logo'/>
                     </a>
                   </div>
                 </div>
@@ -34,7 +34,7 @@ export default function AboutPage() {
 
             <div className="profile-container">
               <div className="profile-img-container">
-                <img className='profile-img' src="./src/assets/images/edir-profile.jpg" alt="" />
+                <img className='profile-img' src="../src/assets/images/edir-profile.jpg" alt="" />
               </div>
               <div className="author-container">
                 <div className="author-name">
@@ -43,10 +43,10 @@ export default function AboutPage() {
                 <div className="author-links">
                   <div className='links-container'>
                     <a href="https://github.com/ejcsequeira" target='/blank'>
-                      <img className='link-logos' src='./src/assets/images/github-logo.png' alt='github-img'/>
+                      <img className='link-logos' src='../src/assets/images/github-logo.png' alt='github-img'/>
                     </a>
                     <a href="https://linkedin.com/in/edir-sequeira/" target='/blank'>
-                      <img className='link-logos' src='./src/assets/images/linkedin-logo.png' alt='linkedin-logo'/>
+                      <img className='link-logos' src='../src/assets/images/linkedin-logo.png' alt='linkedin-logo'/>
                     </a>
                   </div>
                 </div>
