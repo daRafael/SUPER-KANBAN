@@ -1,55 +1,115 @@
 .background{
-    height: 100%;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    background-color: rgb(240, 240, 240);
+  background-color: rgb(240, 240, 240);
 }
 
 .about-container{
-    position:relative;
-    display: grid;    
-    grid-template-columns: 50% 50%;
-    gap: 10px;
-    background-color: white;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    border: none;
-    border-radius: 5px;
-    padding: 20px 20px 20px 20px;
-    width: 70%;
-    min-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 5px;
+
+  width: 60%;
+  min-width: 800px;
+  max-width: 1000px;
+
+  padding: 20px 30px 30px 30px;
 }
 
-.profile-container{
-    display: flex;
-    justify-content: space-evenly;    
-    
+.about-us-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
 }
 
-.profile-img-container{
-    padding: 5px;
-    width: 150px;
+.about-us-info-container {
+  display: flex;
+  gap: 100PX;
 }
 
-.profile-img{
-    width: 150px;
-    border-radius: 50%;
+.profiles-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
-.autor-container{
-    width: 200px;
-    
+.profile-container,
+.profile-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.author-description{
-    display: flex;
-    gap: 10px;
+.profile-container {
+  gap: 50px;
 }
 
-.logo-container{
-    display: block;
-    justify-content: space-evenly;
+.profile-img-container {
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.profile-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.author-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.author-name {
+  white-space: nowrap;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.author-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.links-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.link-logos {
+  height: 40px;
+}
+
+.about-description-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  gap: 60px;
+  
+  font-size: 18px;
+}
+
+.thank-you {
+  font-size: 25px;
+  font-weight: bold;
 }
 
