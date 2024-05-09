@@ -7,7 +7,7 @@ export default function Navbar() {
       <Link to='/'>
         <img 
           className='super-kanban-logo' 
-          src="/src/assets/images/super-kanban-logo.png" 
+          src="/public/images/super-kanban-logo.png" 
           alt="super-kanban-logo" 
         />
       </Link>

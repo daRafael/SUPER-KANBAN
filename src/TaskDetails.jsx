@@ -25,7 +25,7 @@ export default function TaskDetails ({ tasks }) {
               <button className="task-details-edit-button">
                 <img 
                   className="task-detaisls-edit-icon" 
-                  src="/src/assets/images/edit-icon.png" 
+                  src="/public/images/edit-icon.png" 
                   alt="edit-pencil-icon" 
                 />
               </button>
@@ -34,7 +34,7 @@ export default function TaskDetails ({ tasks }) {
               <button className="task-details-close-button">
                 <img 
                   className="task-details-cross-icon" 
-                  src="/src/assets/images/cross-icon.png" 
+                  src="/public/images/cross-icon.png" 
                   alt="cross-icon"
                 />
               </button>

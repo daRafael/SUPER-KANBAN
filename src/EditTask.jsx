@@ -76,7 +76,7 @@ export default function EditTask({ setTasks, tasks }) {
             <button className="edit-task-close-btn">
               <img 
                 className="edit-task-cross-icon" 
-                src="/src/assets/images/cross-icon.png" 
+                src="/public/images/cross-icon.png" 
                 alt="cross-icon" 
               />
             </button>
