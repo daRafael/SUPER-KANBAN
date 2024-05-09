@@ -1,7 +1,16 @@
 .footer {
+  text-align: center;
   background-color: white;
   position: fixed;
   bottom: 0px;
-  left: 100px;
+  left: 80px;
   right: 0px;
+}
+
+.link-repo {
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
 }

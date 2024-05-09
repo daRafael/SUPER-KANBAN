@@ -3,7 +3,7 @@
   position: fixed;
   top: 50px;
   left: 0px;
-  width: 100px;
+  width: 80px;
   height: 100%;
 }
 
@@ -12,4 +12,14 @@
   justify-content: center;
   align-items: center;
   height: 100px;
+}
+
+.sidebar-icon-kanban {
+  height: 35px;
+  cursor: pointer;
+}
+
+.sidebar-icon-about {
+  height: 40px;
+  cursor: pointer;
 }

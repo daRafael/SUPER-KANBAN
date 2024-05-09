@@ -62,7 +62,8 @@ export default function App() {
             <Route 
               path="/tasks/:taskId/edit"
               element={
-                <EditTask 
+                <EditTask
+                  setTasks={setTasks} 
                   tasks={tasks}
                 />
               }
@@ -70,7 +71,7 @@ export default function App() {
             <Route 
               path="/about"
               element={
-                <AboutPage/>
+                <AboutPage />
               }
             />
           </Routes>

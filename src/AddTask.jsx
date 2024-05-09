@@ -71,7 +71,14 @@ export default function AddTask({ addNewTask, tasks, showAddTaskForm, setShowAdd
           New Task
         </div>
         <div className="back-btn-container">
-          <button onClick={()=>{setShowAddTaskForm(!showAddTaskForm)}}>X</button>
+          <button 
+            className="back-btn"
+            onClick={()=>{
+              setShowAddTaskForm(!showAddTaskForm)
+            }}
+          >
+            <img className="cross-add-task-icon" src="src/assets/images/cross-icon.png" alt="cross-icon" />
+          </button>
         </div>
         <form className="form">
           <input

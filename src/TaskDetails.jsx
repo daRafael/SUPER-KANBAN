@@ -22,10 +22,22 @@ export default function TaskDetails ({ tasks }) {
           </div>
           <div className="btns-inspect-container">
             <Link to={`/tasks/${task.id}/edit`}>
-              <button>edit</button>
+              <button className="task-details-edit-button">
+                <img 
+                  className="task-detaisls-edit-icon" 
+                  src="/src/assets/images/edit-icon.png" 
+                  alt="edit-pencil-icon" 
+                />
+              </button>
             </Link>
             <Link to='/'>
-              <button>back</button>
+              <button className="task-details-close-button">
+                <img 
+                  className="task-details-cross-icon" 
+                  src="/src/assets/images/cross-icon.png" 
+                  alt="cross-icon"
+                />
+              </button>
             </Link>
           </div>
         </div>

@@ -27,7 +27,14 @@ export default function Task({ id, task, deleteTask }) {
       <div className='task-info'>
         <div className='prio-del-container'>
           {`${task.priority} Priority`}
-          <button onClick={() => { deleteTask(id)}} className='delete-task-btn'>X</button>
+          <button 
+            onClick={() => { 
+              deleteTask(id)
+            }} 
+            className='delete-task-btn'
+          >
+            <img className='cross-icon' src="src/assets/images/cross-icon.png" alt="cross-icon" />
+          </button>
         </div>
         <div className='task-inpect-container'>
           <div className='task-card-title'>
@@ -35,7 +42,7 @@ export default function Task({ id, task, deleteTask }) {
           </div>
           <Link to={`/tasks/${task.id}`}>
             <button className='inspect-task-btn'>
-              <img className='inspect-icon' src="src/assets/images/Magnifying_glass_icon.svg.png" alt="inpect" />
+              <img className='inspect-icon' src="src/assets/images/inspect-icon.png" alt="inpect" />
             </button>
           </Link>
         </div>
