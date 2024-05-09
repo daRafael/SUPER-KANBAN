@@ -10,6 +10,111 @@
   padding: 20px 30px 30px 30px;
 }
 
+.edit-task-close-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-task-cross-icon {
+  height: 15px;
+}
+
 .edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-back-btn-container {
+  position: absolute;
+
+  top: 8px;
+  right: 8px;
+}
+
+.title-edit-input {
+  font-size: 25px;
+  font-weight: bold;
+
+  padding: 20px 0;
+}
+
+.assignee-edit-input,
+.prio-edit-input,
+.title-edit-input {
+  border: none;
+}
+
+.prio-edit-input,
+.status-edit-input {
+  cursor: pointer;
+}
+
+.status-edit-input,
+.description-edit-input {
+  border: none;
+  font-size: 20px;
+}
+
+.description-edit-input {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  resize: none;
+  max-height: 100px;
+}
+
+.assignee-prio-edit-container-iputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 15;
   
+  padding-top: 20px
+}
+
+.assignee-edit-container,
+.prio-edit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+.prio-edit-input {
+  max-width: 75px;
+}
+
+.assignee-edit-input,
+.prio-edit-input {
+  font-size: 15px;
+}
+
+.submit-edit-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 40px;
+}
+
+.submit-edit-btn {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 8px 25px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.submit-edit-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.submit-edit-btn:active {
+  margin-top: 2px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
 }

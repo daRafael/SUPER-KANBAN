@@ -27,8 +27,19 @@
   font-weight: bold;
 }
 
+.inspect-task-btn,
+.delete-task-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .inspect-icon {
-  height: 20px;
+  height: 12px;
+}
+
+.cross-icon {
+  height: 10px;
 }
 
 .drag-container {

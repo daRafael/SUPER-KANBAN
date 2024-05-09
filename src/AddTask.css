@@ -41,6 +41,16 @@
   right: 4px;
 }
 
+.cross-add-task-icon {
+  height: 15px;
+}
+
+.back-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -78,6 +88,11 @@ select:focus {
 .date-input {
   border: none;
   font-size: 18px;
+}
+
+.prio-input,
+.status-input {
+  cursor: pointer;
 }
 
 .submit-task-btn-container {

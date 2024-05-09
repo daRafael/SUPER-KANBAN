@@ -26,6 +26,18 @@
   gap: 8px;
 }
 
+.task-details-edit-button,
+.task-details-close-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.task-detaisls-edit-icon,
+.task-details-cross-icon {
+  height: 15px;
+}
+
 .status-container,
 .description-container {
   font-size: 20px;
@@ -41,7 +53,6 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  flex-wrap: nowrap;
   font-size: 15px;
 
   padding: 20px 0;
