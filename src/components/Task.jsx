@@ -30,10 +30,14 @@ export default function Task({ id, task, deleteTask }) {
           <button onClick={() => { deleteTask(id)}} className='delete-task-btn'>X</button>
         </div>
         <div className='task-inpect-container'>
-        {task.title}
-        <Link to={`/tasks/${task.id}`}>
-          <button className='inspect-task-btn'>inspect</button>
-        </Link>
+          <div className='task-card-title'>
+          {task.title}
+          </div>
+          <Link to={`/tasks/${task.id}`}>
+            <button className='inspect-task-btn'>
+              <img className='inspect-icon' src="src/assets/images/Magnifying_glass_icon.svg.png" alt="inpect" />
+            </button>
+          </Link>
         </div>
         <div className='assignee-container'>
           {`Assigned to: ${task.assignee}`}

@@ -1,0 +1,15 @@
+.edit-task-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 5px;
+
+  padding: 20px 30px 30px 30px;
+}
+
+.edit-form {
+  
+}

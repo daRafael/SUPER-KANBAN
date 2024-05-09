@@ -20,8 +20,10 @@ export default function TaskDetails ({ tasks }) {
           <div className="status-container">
             {task.status}
           </div>
-          <div className="btns-container">
-            <button>edit</button>
+          <div className="btns-inspect-container">
+            <Link to={`/tasks/${task.id}/edit`}>
+              <button>edit</button>
+            </Link>
             <Link to='/'>
               <button>back</button>
             </Link>

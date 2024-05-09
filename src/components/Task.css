@@ -20,6 +20,15 @@
 .task-inpect-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.task-card-title {
+  font-weight: bold;
+}
+
+.inspect-icon {
+  height: 20px;
 }
 
 .drag-container {
