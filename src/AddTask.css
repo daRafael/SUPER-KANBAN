@@ -95,6 +95,21 @@ select:focus {
   cursor: pointer;
 }
 
+.add-task-due-date-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.add-task-due-date-container div {
+  font-size: 18px;
+}
+
+.date-input {
+  max-width: 140px;
+}
+
 .submit-task-btn-container {
   display: flex;
   justify-content: center;

@@ -33,7 +33,7 @@ export default function EditTask({ setTasks, tasks }) {
     setPriority(e.target.value);
   }
 
-  const handleStatusChange = () => {
+  const handleStatusChange = (e) => {
     setStatus(e.target.value);
   }
 

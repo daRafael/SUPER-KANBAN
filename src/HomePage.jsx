@@ -16,7 +16,6 @@ export default function HomePage({tasks, columns, setTasks, setColumns}) {
 
   const addNewTask = (task) => {
     setTasks([...tasks, task]); 
-    console.log(task) 
   }
     
   const deleteTask = (taskId) => {

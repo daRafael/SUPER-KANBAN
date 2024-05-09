@@ -8,7 +8,7 @@ export default function AddTask({ addNewTask, tasks, showAddTaskForm, setShowAdd
   const [assignee, setAssignee] = useState('');
   const [priority, setPriority] = useState('Medium');
   const [status, setStatus] = useState('To Do');
-  const [dueDate, setDueDate] = useState('')
+  const [dueDate, setDueDate] = useState('');
  
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -27,7 +27,7 @@ export default function AddTask({ addNewTask, tasks, showAddTaskForm, setShowAdd
     setPriority(e.target.value);
   }
 
-  const handleStatusChange = () => {
+  const handleStatusChange = (e) => {
     setStatus(e.target.value);
   }
 
@@ -43,7 +43,8 @@ export default function AddTask({ addNewTask, tasks, showAddTaskForm, setShowAdd
       return;
     } 
 
-    const id = tasks.length + 1;
+    const idValue = tasks.length + 1;
+    const id = idValue.toString();
     const createdDate = Date.now();
 
     addNewTask({ id, title, description, assignee, status, priority, createdDate, dueDate });
@@ -55,6 +56,9 @@ export default function AddTask({ addNewTask, tasks, showAddTaskForm, setShowAdd
     setPriority('Medium');
     setStatus('To Do');
     setDueDate('');
+
+    setShowAddTaskForm(!showAddTaskForm)
+
     }
 
     const resizeTextarea = (element) => {
@@ -115,7 +119,6 @@ export default function AddTask({ addNewTask, tasks, showAddTaskForm, setShowAdd
               value={priority} 
               onChange={handlePriorityChange}
             >
-              <option value=''>Select Priority</option>
               <option value='Low'>Low</option>
               <option value='Medium'>Medium</option>
               <option value='High'>High</option>
@@ -134,13 +137,18 @@ export default function AddTask({ addNewTask, tasks, showAddTaskForm, setShowAdd
               <option value='Done'>Done</option>
             </select>
 
-            <input
-              className="date-input"
-              type="date"
-              name="dueDate"
-              value={dueDate}
-              onChange={handleDueDateChange}
-            />
+            <div className="add-task-due-date-container">
+              <div>
+                Due:
+              </div>
+              <input
+                className="date-input"
+                type="date"
+                name="dueDate"
+                value={dueDate}
+                onChange={handleDueDateChange}
+              />
+            </div>
           </div>
           <div className="submit-task-btn-container">
             <button 

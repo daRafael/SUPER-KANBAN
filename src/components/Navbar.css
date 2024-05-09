@@ -13,4 +13,5 @@
 .super-kanban-logo {
   height: 90px;
   margin-left: 14px;
+  cursor: pointer;
 }
