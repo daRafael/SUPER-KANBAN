@@ -18,6 +18,7 @@ import Footer from './components/Footer';
 import HomePage from './HomePage';
 import TaskDetails from "./TaskDetails";
 import AboutPage from "./AboutPage";
+import EditTask from "./EditTask";
 
 
 
@@ -57,6 +58,14 @@ export default function App() {
               <TaskDetails 
                 tasks={tasks} 
               />} 
+            />
+            <Route 
+              path="/tasks/:taskId/edit"
+              element={
+                <EditTask 
+                  tasks={tasks}
+                />
+              }
             />
             <Route 
               path="/about"

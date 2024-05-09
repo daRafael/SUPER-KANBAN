@@ -11,7 +11,7 @@ export default function Column({ id, title, tasks, deleteTask }) {
   return (
     <SortableContext id={id} items={tasks}>
       <div ref={setNodeRef} className="column">
-        <div className='title'>
+        <div className='column-title'>
           {title}
         </div>
           {tasks.map((task) => {
