@@ -1,4 +1,6 @@
 import './AboutPage.css'
+import gitlogo from '../images/github-logo.jpg';
+import inlogo from '../images/linkedin-logo.png';
 
 export default function AboutPage() {
 
@@ -16,9 +18,22 @@ export default function AboutPage() {
                 <h2>Rafael Guerra</h2>
               </div>
               <div className="author-description">
-                <p>It is a long established fact that a reader will be 
-                  distracted by the readable content of a page when looking 
-                  at its layout.</p>
+                <div className='logo-container'>
+                  <a href="https://github.com/daRafael" target='/blank'>
+                    <img src={gitlogo} alt="" className='logo-img' />
+                  </a>
+                  <a href="https://www.linkedin.com/in/rafael-guerra-full-stack-developer/" target='/blank'>
+                    <img src={inlogo} alt="" className='logo-img' />
+                  </a>
+                </div>
+                <div>
+                  <p>
+                    IronHack Bootcamp
+                    <br />
+                    <br />
+                    Course: Web Developing
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -32,9 +47,22 @@ export default function AboutPage() {
                 <h2>Edir Sequeira</h2>
               </div>
               <div className="author-description">
-                <p>It is a long established fact that a reader will be 
-                  distracted by the readable content of a page when looking 
-                  at its layout</p>
+                <div className='logo-container'>
+                  <a href="https://github.com/ejcsequeira" target='/blank'>
+                    <img src={gitlogo} alt="" className='logo-img' />
+                  </a>
+                  <a href="https://www.linkedin.com/in/edir-sequeira" target='/blank'>
+                    <img src={inlogo} alt="" className='logo-img' />
+                  </a>
+                </div>
+                <div>
+                  <p>
+                    IronHack Bootcamp
+                    <br />
+                    <br />
+                    Course: Web Developing
+                  </p>
+                </div>
               </div>
             </div>
           </div>
