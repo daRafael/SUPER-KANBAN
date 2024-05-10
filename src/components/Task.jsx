@@ -33,7 +33,7 @@ export default function Task({ id, task, deleteTask }) {
             }} 
             className='delete-task-btn'
           >
-            <img className='cross-icon' src="/public/images/cross-icon.png" alt="cross-icon" />
+            <img className='cross-icon' src="/images/cross-icon.png" alt="cross-icon" />
           </button>
         </div>
         <div className='task-inpect-container'>
@@ -42,7 +42,7 @@ export default function Task({ id, task, deleteTask }) {
           </div>
           <Link to={`/tasks/${task.id}`}>
             <button className='inspect-task-btn'>
-              <img className='inspect-icon' src="/public/images/inspect-icon.png" alt="inpect" />
+              <img className='inspect-icon' src="/images/inspect-icon.png" alt="inpect" />
             </button>
           </Link>
         </div>

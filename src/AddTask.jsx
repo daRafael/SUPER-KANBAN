@@ -81,7 +81,7 @@ export default function AddTask({ addNewTask, tasks, showAddTaskForm, setShowAdd
               setShowAddTaskForm(!showAddTaskForm)
             }}
           >
-            <img className="cross-add-task-icon" src="/public/images/cross-icon.png" alt="cross-icon" />
+            <img className="cross-add-task-icon" src="/images/cross-icon.png" alt="cross-icon" />
           </button>
         </div>
         <form className="form">
