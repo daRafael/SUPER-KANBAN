@@ -56,7 +56,7 @@ export default function AboutPage() {
 
           <div className="about-description-container">
             <div className="about-description">
-              We are proud to present... SUPER KANBAN!<br />
+              <div>We are proud to present...<br/>SUPER KANBAN!</div>
               A project marks our journey at IronHack, representing our second project in the bootcamp and our first dive into React. We used dnd-kit, a package used to build a fully fleshed out drag-and-drop feature. It was challenging, but very satisfying when we got it working. That being said, we sincerely hope you enjoy exploring it!
             </div>
             <div className='thank-you'>

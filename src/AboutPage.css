@@ -108,6 +108,10 @@
   font-size: 18px;
 }
 
+.about-description div {
+  text-align: center
+}
+
 .thank-you {
   font-size: 25px;
   font-weight: bold;
